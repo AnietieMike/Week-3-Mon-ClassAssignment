@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Notification</string>
+    <string name="notification_activity">NotificationView</string>
+    <string name="notification">Notify Me</string>
+    <string name="next_activity">Next</string>
+    <string name="text">Inactive</string>
+    <string name="notification_title">New Notification</string>
+    <string name="notification_message">Active</string>
+    <string name="channel_name">My Channel</string>
+    <string name="channel_description">Created a new channel</string>
+</resources>
