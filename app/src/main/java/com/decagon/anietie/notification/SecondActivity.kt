@@ -7,14 +7,20 @@ import android.widget.Toast
 
 class SecondActivity : AppCompatActivity() {
 
-    lateinit var textView: TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        textView = findViewById(R.id.text)
+        val value1 = intent.getStringExtra("Active")
 
-        textView.text
+        val value2 = intent.getStringExtra("Inactive")
+
+        val textView = findViewById<TextView>(R.id.text)
+
+        textView.text = if (value1 == null) {
+            value2
+        } else {
+         value1
+        }
     }
 }

@@ -16,6 +16,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
 const val CHANNEL_ID = "channel"
+lateinit var notificationButton: Button
+lateinit var nextActivityButton: Button
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         nextActivityButton.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("Inactive", "Inactive")
             startActivity(intent)
         }
 
@@ -58,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 .setAutoCancel(true) // clear notification after click
 
         val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra("Active", "Active")
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
         mBuilder.setContentIntent(pendingIntent)
